@@ -34,6 +34,9 @@ public class Paciente {
     @OneToMany(mappedBy = "paciente")
     private List<Consulta> consultas;
 
+    @OneToMany(mappedBy = "paciente")
+    private List<Receita> receitas;
+
     public Long getId() {
         return id;
     }

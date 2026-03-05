@@ -35,6 +35,9 @@ public class Medico {
     @JoinColumn(name = "fk_especialidade")
     private Especialidade especialidade;
 
+    @OneToMany(mappedBy = "medico")
+    private List<Receita> receitas;
+
     public Long getId() {
         return id;
     }
@@ -74,5 +77,5 @@ public class Medico {
     public void setEspecialidade(Especialidade especialidade) {
         this.especialidade = especialidade;
     }
-    
+
 }
