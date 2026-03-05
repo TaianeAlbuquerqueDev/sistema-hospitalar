@@ -2,6 +2,8 @@ package br.com.senai.sistema_hospitalar.entity;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -35,6 +37,7 @@ public class Medico {
     @JoinColumn(name = "fk_especialidade")
     private Especialidade especialidade;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "medico")
     private List<Receita> receitas;
 
@@ -76,6 +79,14 @@ public class Medico {
 
     public void setEspecialidade(Especialidade especialidade) {
         this.especialidade = especialidade;
+    }
+
+    public List<Receita> getReceitas() {
+        return receitas;
+    }
+
+    public void setReceitas(List<Receita> receitas) {
+        this.receitas = receitas;
     }
 
 }

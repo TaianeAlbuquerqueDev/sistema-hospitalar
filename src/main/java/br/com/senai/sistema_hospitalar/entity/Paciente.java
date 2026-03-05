@@ -76,4 +76,12 @@ public class Paciente {
     public void setConsultas(List<Consulta> consultas) {
         this.consultas = consultas;
     }
+
+    public List<Receita> getReceitas() {
+        return receitas;
+    }
+
+    public void setReceitas(List<Receita> receitas) {
+        this.receitas = receitas;
+    }
 }
