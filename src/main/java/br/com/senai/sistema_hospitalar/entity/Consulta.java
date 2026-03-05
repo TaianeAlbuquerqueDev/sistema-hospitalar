@@ -8,6 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
@@ -21,7 +22,7 @@ public class Consulta {
     private LocalDateTime dataHora;
 
     @Size(min = 1, max = 1000, message = "Mínimo de 3 e máximo de 1000 caracteres para o diagnóstico!")
-    @NotNull(message = "É necessário informar o diagnóstico!")
+    @NotBlank(message = "É necessário informar o diagnóstico!")
     private String diagnostico;
 
     @ManyToOne
