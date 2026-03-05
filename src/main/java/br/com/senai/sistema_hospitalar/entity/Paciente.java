@@ -3,6 +3,8 @@ package br.com.senai.sistema_hospitalar.entity;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -32,9 +34,11 @@ public class Paciente {
     private LocalDate dataNascimento;
 
     @OneToMany(mappedBy = "paciente")
+    @JsonIgnore
     private List<Consulta> consultas;
 
     @OneToMany(mappedBy = "paciente")
+    @JsonIgnore
     private List<Receita> receitas;
 
     public Long getId() {

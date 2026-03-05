@@ -31,14 +31,15 @@ public class Medico {
     private String crm;
 
     @OneToMany(mappedBy = "medico")
+    @JsonIgnore
     private List<Consulta> consultas;
 
     @ManyToOne
     @JoinColumn(name = "fk_especialidade")
     private Especialidade especialidade;
 
-    @JsonIgnore
     @OneToMany(mappedBy = "medico")
+    @JsonIgnore
     private List<Receita> receitas;
 
     public Long getId() {
