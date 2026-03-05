@@ -1,0 +1,20 @@
+package br.com.senai.sistema_hospitalar.config;
+
+
+import org.springframework.context.annotation.Configuration;
+
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Info;
+
+@Configuration
+@OpenAPIDefinition(
+    info = @Info(
+        title = "Sistema Hospitalar API - TaianeAlbuquerqueDev",
+        version = "1.0",
+        description = "API Sistema Hospitalar"
+    )
+)
+public class Swagger {
+
+}
+
